@@ -17,19 +17,16 @@ public:
   bool equalFrequency(string word)
   {
     int charCount[26] = {0};
-/* This code snippet is iterating over each character `c` in the string `word` and incrementing the
-count of that character in the `charCount` array. The expression `c - 'a'` is used to convert the
-character `c` to an index in the `charCount` array. Since the characters in `word` are assumed to be
-lowercase letters, subtracting `'a'` from `c` gives the index of the character in the range of 0 to
-25 (corresponding to the letters 'a' to 'z'). */
+    /**
+     * @brief Go through the string, find each letter appear time and record with its
+     * position by using this word to subtract ASCII first letter 'a'. charCount[characterIterate - 'a']++ means
+     * at position of that character, that character appear once.
+     * @param word is the string input
+     */
     for (char& characterIterate : word)
     {
       charCount[characterIterate - 'a']++;
     }
-    /* This code snippet is iterating over each index `index` in the `charCount` array. If the count of
-    the character at that index is 0, it continues to the next iteration. Otherwise, it decrements
-    the count of that character by 1 and creates an unordered set `frequency` to store the
-    frequencies of the remaining characters. */
     for (size_t index = 0; index < 26; index++)
     {
       if (charCount[index] == 0)
