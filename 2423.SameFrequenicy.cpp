@@ -17,30 +17,39 @@ public:
   bool equalFrequency(string word)
   {
     int charCount[26] = {0};
-    for (char& c : word)
+    /**
+     * @brief Go through the string, find each letter appear time and record with its
+     * position by using this word to subtract ASCII first letter 'a'. charCount[characterIterate - 'a']++ means
+     * at position of that character, that character appear once.
+     * @param word is the string input
+     */
+    for (char& characterIterate : word)
     {
-      charCount[c - 'a']++;
+      charCount[characterIterate - 'a']++;
     }
-    for (int i = 0; i < 26; i++)
+    for (size_t index = 0; index < 26; index++)
     {
-      if (charCount[i] == 0)
+      // Border judge, if the first index is 0, then skip this iteration
+      if (charCount[index] == 0)
       {
         continue;
       }
-      charCount[i]--;
+      /* Check if deleting a character from the word will result in all
+      remaining characters having the same frequency. */
+      charCount[index]--;
       unordered_set<int> frequency;
-      for (int f : charCount)
+      for (int frequent : charCount)
       {
-        if (f > 0)
+        if (frequent > 0)
         {
-          frequency.insert(f);
+          frequency.insert(frequent);
         }
       }
       if (frequency.size() == 1)
       {
         return true;
       }
-      charCount[i]++;
+      charCount[index]++;
     }
     return false;
   }
