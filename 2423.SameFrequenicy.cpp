@@ -29,10 +29,13 @@ public:
     }
     for (size_t index = 0; index < 26; index++)
     {
+      // Border judge, if the first index is 0, then skip this iteration
       if (charCount[index] == 0)
       {
         continue;
       }
+      /* Check if deleting a character from the word will result in all
+      remaining characters having the same frequency. */
       charCount[index]--;
       unordered_set<int> frequency;
       for (int frequent : charCount)
