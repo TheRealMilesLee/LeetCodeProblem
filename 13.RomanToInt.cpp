@@ -20,11 +20,10 @@ public:
   int romanToInt(string s)
   {
     int ans = 0;
-    int n = s.length();
-    for (int i = 0; i < n; ++i)
+    for (size_t loop = 0; loop < s.length(); loop++)
     {
-      int value = symbolValues[s[i]];
-      if (i < n - 1 && value < symbolValues[s[i + 1]])
+      int value = symbolValues[s[loop]];
+      if (loop < s.length() - 1 && value < symbolValues[s[loop + 1]])
       {
         ans -= value;
       }
