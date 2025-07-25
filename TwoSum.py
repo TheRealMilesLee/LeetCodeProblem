@@ -25,7 +25,7 @@ if __name__ == "__main__":
   nums1 = [3, 4, 5, 6]
   nums2 = [4, 5, 6]
 
-  results1 = TestCase.twoSum(nums1, 10)
+  results1 = TestCase.twoSum(nums1, 7)
   print(results1)
 
   results2 = TestCase.twoSum(nums2, 10)
