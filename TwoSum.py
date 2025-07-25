@@ -10,13 +10,14 @@ Return the answer with the smaller index first.
 class Solution:
 
   def twoSum(self, nums: list[int], target: int) -> list[int]:
-    prevMap = {}
+    record = {}
 
     for index, number in enumerate(nums):
-      diff = target - number
-      if diff in prevMap:
-        return [prevMap[diff], index]
-      prevMap[number] = index
+      difference = target - number
+      if difference in record:
+        return [record[difference], index]
+      else:
+        record[number] = index
 
 
 if __name__ == "__main__":
