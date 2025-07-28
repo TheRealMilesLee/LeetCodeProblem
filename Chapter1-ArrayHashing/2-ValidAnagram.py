@@ -3,9 +3,6 @@ Given two strings s and t, return true if the two strings are anagrams of each o
 
 An anagram is a string that contains the exact same characters as another string, but the order of the characters can be different
 """
-import collections
-
-
 class Solution:
 
   def isAnagram(self, s: str, t: str) -> bool:
@@ -34,3 +31,9 @@ if __name__ == "__main__":
   string4 = "jam"
   results2 = TestCase.isAnagram(string3, string4)
   print(results2)
+
+"""
+注意读题, 这个地方的anagram是指的是两个字符串所包含的字母相同, 字符数量也相同.
+
+我们可以用一个array来记录中间的区别, 对于第一个string来说, 出现了一个字母，我们就在这个字母上 + 1, 如果这个字母在第二个string中也出现了,则在相同的地方进行 - 1, 那么这样下来如果两个字符串使用的字母相同, 字符数量也相同的话, 最后的array应该全是0, 只要有一项不相同, 则在array中就一定会出现一个位置是不为0的
+"""

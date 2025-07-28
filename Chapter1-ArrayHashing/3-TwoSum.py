@@ -31,3 +31,10 @@ if __name__ == "__main__":
 
   results2 = TestCase.twoSum(nums2, 10)
   print(results2)
+"""
+最经典的两数之和问题， 要用两个index凑出target, 我们只需要去看另一个index在当前的array中是否存在
+
+比如1 + 3 = 4, 其中4是target, 那么我们只需要去看一下1 和 3 分别在当前array的哪个index上。 所以我们可以用hashmap 来记录这个数据。key是当前数字, 而value是当前数字所在的index
+
+走一个循环遍历整个nums, 用target去减当前number, 然后用这个为search key在hashmap里找到对应的index并且返回
+"""

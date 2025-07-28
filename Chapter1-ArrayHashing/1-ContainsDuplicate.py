@@ -27,3 +27,8 @@ if __name__ == "__main__":
 
   results2 = TestCase.hasDuplicate(nums2)
   print(results2)
+"""
+最简单的方式就是用Hashmap, Key是nums里的数, value是出现的次数。
+先检查是否已经在hashmap里面存在, 如果已经存在就可以+1然后直接return true, 如果不存在则加入
+到当前的Hashmap中
+"""
