@@ -35,5 +35,5 @@ if __name__ == "__main__":
   Result2 = TestCase.longestConsecutive(nums2)
   print(Result2)
 """
-
+排序, 然后数
 """
