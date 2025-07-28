@@ -37,3 +37,11 @@ if __name__ == "__main__":
   print(
       f"Original: {string1}, Encode: {encodeResult1}, Decode: {decodeResult1}"
   )
+
+"""
+实际上tricky part在如何去找分隔符来体现当前这个string和下一个string, 因为要求是stateless的, 所以最佳的解法就是在每个string前面加上当前string的长度和一个符号代表起点, 就像这样:
+
+4#abcd
+
+在这个例子中, 4就是abcd字符串的长度, #就是代表起点部分. 然后在解码部分就直接按着这个拆就完事
+"""

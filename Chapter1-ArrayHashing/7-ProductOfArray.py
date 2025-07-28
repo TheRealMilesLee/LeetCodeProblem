@@ -61,3 +61,20 @@ if __name__ == "__main__":
   Result4 = TestCase.productExceptItSelf(Array4)
   Better4 = TestCase.productExceptFaster(Array4)
   print(f"{Result4} {Better4} \n")
+
+
+"""
+最简单的做法就是直接把整个nums给乘一遍然后再除以当前index对应的那个数字, 比如
+
+[1,2,4,6]
+
+执行相乘以后得到 48, 然后用48去挨个除以index
+
+[48 / 1 = 48, 48 / 2 = 24, 48 / 4 = 12, 48 / 6 = 8]
+
+所以得到结果 [48, 24, 12, 8]
+
+当然, 题目中也说了不让用除法， 那么我们就用拆分的方法做, 我们可以用当前index前面的乘以当前index后面的然后放入当前的位置也可以得到答案
+
+[1 * (2*4*6) = 48, 1 * (4*6) = 24, (1*2)*6 = 12, 1*2*4 = 8]
+"""

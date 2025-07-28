@@ -57,3 +57,7 @@ board2 = [["1", "2", ".", ".", "3", ".", ".", ".", "."],
 
 Result2 = TestCase.isValidSudoku(board2)
 print(Result2)
+
+"""
+没啥复杂的, 就是hashmap存了然后看在不在就完事了
+"""
