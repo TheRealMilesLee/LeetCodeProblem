@@ -29,3 +29,12 @@ if __name__ == "__main__":
 
   results2 = Testcase.groupAnagrams(strs2)
   print(results2)
+
+"""
+解法和上一个类似, 通过走一个循环的方式来找出字符数量和类型相同的字符, 只不过这次是塞进一个新的array。整个anagram的核心就在
+
+count = [0] * 26
+count[ord(c) - ord('a)] += 1
+
+不管是之前的对比也好还是现在的集合也好, 核心都是去找字符数量和类型相同的
+"""
