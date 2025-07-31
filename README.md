@@ -1,6 +1,6 @@
 # LeetCodeProblem
 ## Project Overview
-This repository contains solutions to various LeetCode problems implemented in Python. The project is organized by topics with Chapter1 focusing on Array and Hashing problems, along with Dynamic Programming solutions.
+This repository contains solutions to various LeetCode problems implemented in Python. The project is organized by topics with Chapter1 focusing on Array and Hashing problems, Chapter2 covering Two Pointer techniques, along with Dynamic Programming solutions.
 
 ## Directory Structure
 ```
@@ -15,6 +15,12 @@ This repository contains solutions to various LeetCode problems implemented in P
 │   ├── 7-ProductOfArray.py
 │   ├── 8-ValidSudoku.py
 │   └── 9-LongestCommonSequence.py
+├── Chapter2-TwoPointer/
+│   ├── 1-ValiPalindrome.py
+│   ├── 2-TwoIntegerSum.py
+│   ├── 3-ThreeSum.py
+│   ├── 4-ContainerWithMostWater.py
+│   └── 5-TrappingRainWatere.py
 ├── DynamicProgramming/
 │   ├── DP-CoinChange.py
 │   └── DP-RodCutting.py
@@ -33,6 +39,13 @@ This repository contains solutions to various LeetCode problems implemented in P
 - `8-ValidSudoku.py`: Validate Sudoku board rules
 - `9-LongestCommonSequence.py`: Find longest consecutive sequence
 
+## Chapter 2: Two Pointer Techniques
+- `1-ValiPalindrome.py`: Check if string is valid palindrome (case-insensitive)
+- `2-TwoIntegerSum.py`: Two sum for sorted array using O(1) space
+- `3-ThreeSum.py`: Find all triplets that sum to zero
+- `4-ContainerWithMostWater.py`: Find container that holds most water
+- `5-TrappingRainWatere.py`: Calculate trapped rainwater between bars
+
 ## Dynamic Programming
 - `DP-CoinChange.py`: Coin change problem solution
 - `DP-RodCutting.py`: Rod cutting optimization problem
@@ -44,7 +57,7 @@ Python
 
 # LeetCodeProblem
 ## 项目简介
-本项目包含多个LeetCode算法题解，采用Python实现。项目按主题分类，第一章专注于数组和哈希表问题，另外包含动态规划相关解题方案。
+本项目包含多个LeetCode算法题解，采用Python实现。项目按主题分类，第一章专注于数组和哈希表问题，第二章涵盖双指针技巧，另外包含动态规划相关解题方案。
 
 ## 目录结构
 ```
@@ -59,6 +72,12 @@ Python
 │   ├── 7-ProductOfArray.py           # 除自身以外数组的乘积
 │   ├── 8-ValidSudoku.py              # 有效的数独
 │   └── 9-LongestCommonSequence.py    # 最长连续序列
+├── Chapter2-TwoPointer/
+│   ├── 1-ValiPalindrome.py           # 验证回文串
+│   ├── 2-TwoIntegerSum.py            # 有序数组的两数之和
+│   ├── 3-ThreeSum.py                 # 三数之和
+│   ├── 4-ContainerWithMostWater.py   # 盛最多水的容器
+│   └── 5-TrappingRainWatere.py       # 接雨水
 ├── DynamicProgramming/
 │   ├── DP-CoinChange.py              # 硬币找零问题
 │   └── DP-RodCutting.py              # 钢条切割问题
@@ -79,6 +98,15 @@ Python
 8. **有效的数独** - 行列九宫格的哈希集合验证
 9. **最长连续序列** - O(n)时间复杂度的序列查找
 
+## 第二章：双指针技巧
+本章包含5个双指针经典问题：
+
+1. **验证回文串** - 双指针检验回文，忽略大小写和非字母数字字符
+2. **有序数组的两数之和** - 在有序数组中用双指针找目标和
+3. **三数之和** - 排序+双指针找所有和为0的三元组
+4. **盛最多水的容器** - 双指针找最大面积容器
+5. **接雨水** - 双指针计算能接到的雨水总量
+
 ## 动态规划专题
 - **硬币找零问题** - 经典的动态规划入门问题
 - **钢条切割问题** - 最优子结构的动态规划应用
@@ -88,6 +116,13 @@ Python
 - 代码规范: PEP8格式标准
 - 算法复杂度: 每个解法都注重时间和空间复杂度优化
 - 数据结构: 重点使用数组、哈希表、集合等基础数据结构
+- 算法技巧: 涵盖哈希表、双指针、动态规划等经典算法思想
+
+## 学习路径
+1. **第一章 - 数组与哈希表**: 掌握基础数据结构的应用
+2. **第二章 - 双指针技巧**: 学习空间优化的算法思想
+3. **动态规划专题**: 理解最优子结构和状态转移
+
 ## 使用说明
 1. 克隆项目仓库
 2. 安装Python环境
