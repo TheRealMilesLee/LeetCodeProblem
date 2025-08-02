@@ -9,34 +9,20 @@ Could you solve it in O(n) time without using the division operation
 
 class Solution:
 
-  def productExceptItSelf(self, nums: list[int]) -> list[int]:
-    resultArray = []
+  def productExceptSelf(self, nums: list[int]) -> list[int]:
+    n = len(nums)
+    res = [0] * n
+    pref = [0] * n
+    suff = [0] * n
 
-    for index in range(len(nums)):
-      product = 1
-      for multi in range(len(nums)):
-        if index != multi:
-          product *= nums[multi]
-      resultArray.append(product)
-    return resultArray
-
-  def productExceptFaster(self, nums: list[int]) -> list[int]:
-    length = len(nums)
-    result = [1] * length
-
-    # 左乘积
-    left_product = 1
-    for i in range(length):
-      result[i] = left_product
-      left_product *= nums[i]
-
-    # 右乘积
-    right_product = 1
-    for i in range(length - 1, -1, -1):
-      result[i] *= right_product
-      right_product *= nums[i]
-
-    return result
+    pref[0] = suff[n - 1] = 1
+    for i in range(1, n):
+      pref[i] = nums[i - 1] * pref[i - 1]
+    for i in range(n - 2, -1, -1):
+      suff[i] = nums[i + 1] * suff[i + 1]
+    for i in range(n):
+      res[i] = pref[i] * suff[i]
+    return res
 
 
 if __name__ == "__main__":
@@ -61,8 +47,6 @@ if __name__ == "__main__":
   Result4 = TestCase.productExceptItSelf(Array4)
   Better4 = TestCase.productExceptFaster(Array4)
   print(f"{Result4} {Better4} \n")
-
-
 """
 最简单的做法就是直接把整个nums给乘一遍然后再除以当前index对应的那个数字, 比如
 
