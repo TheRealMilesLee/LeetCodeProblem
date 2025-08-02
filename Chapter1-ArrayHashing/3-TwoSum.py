@@ -25,12 +25,16 @@ if __name__ == "__main__":
 
   nums1 = [3, 4, 5, 6]
   nums2 = [4, 5, 6]
+  nums3 = [1, 3, 4, 2]
 
   results1 = TestCase.twoSum(nums1, 7)
   print(results1)
 
   results2 = TestCase.twoSum(nums2, 10)
   print(results2)
+
+  results3 = TestCase.twoSum(nums3, 6)
+  print(results3)
 """
 最经典的两数之和问题， 要用两个index凑出target, 我们只需要去看另一个index在当前的array中是否存在
 
