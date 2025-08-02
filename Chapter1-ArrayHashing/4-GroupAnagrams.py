@@ -17,6 +17,19 @@ class Solution:
       results[tuple(count)].append(strsIndex)
     return list(results.values())
 
+  def groupAnagramsDict(self, strs: list[list]) -> list[list[str]]:
+    resultArray = []
+
+    sameDict = collections.defaultdict(list)
+    for index in strs:
+      SortedResult = sorted(index)
+      keyString = ''.join(SortedResult)
+      sameDict[keyString].append(index)
+
+    for keys, values in sameDict.items():
+      resultArray.append(values)
+    return resultArray
+
 
 if __name__ == "__main__":
   Testcase = Solution()
@@ -25,11 +38,12 @@ if __name__ == "__main__":
   strs2 = ["x"]
 
   results1 = Testcase.groupAnagrams(strs1)
+  resultsDict = Testcase.groupAnagramsDict(strs1)
   print(results1)
+  print(resultsDict)
 
   results2 = Testcase.groupAnagrams(strs2)
   print(results2)
-
 """
 解法和上一个类似, 通过走一个循环的方式来找出字符数量和类型相同的字符, 只不过这次是塞进一个新的array。整个anagram的核心就在
 
