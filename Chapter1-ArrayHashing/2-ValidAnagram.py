@@ -3,6 +3,9 @@ Given two strings s and t, return true if the two strings are anagrams of each o
 
 An anagram is a string that contains the exact same characters as another string, but the order of the characters can be different
 """
+import string
+
+
 class Solution:
 
   def isAnagram(self, s: str, t: str) -> bool:
@@ -19,19 +22,42 @@ class Solution:
         return False
     return True
 
+  def isAnagramDict(self, s: str, t: str) -> bool:
+    if len(s) != len(t):
+      return False
+
+    Alphabet = dict.fromkeys(string.ascii_lowercase, 0)
+
+    for index in s:
+      Alphabet[index] += 1
+
+    for searchIndex in t:
+      if searchIndex not in Alphabet:
+        return False
+      else:
+        Alphabet[searchIndex] -= 1
+
+    for keys, values in Alphabet.items():
+      if values != 0:
+        return False
+    return True
+
 
 if __name__ == "__main__":
   TestCase = Solution()
   string1 = "racecar"
   string2 = "carrace"
   results1 = TestCase.isAnagram(string1, string2)
+  resultsDict = TestCase.isAnagramDict(string1, string2)
   print(results1)
+  print(resultsDict)
 
   string3 = "jar"
   string4 = "jam"
   results2 = TestCase.isAnagram(string3, string4)
+  resultsDict2 = TestCase.isAnagramDict(string3, string4)
   print(results2)
-
+  print(resultsDict2)
 """
 注意读题, 这个地方的anagram是指的是两个字符串所包含的字母相同, 字符数量也相同.
 
