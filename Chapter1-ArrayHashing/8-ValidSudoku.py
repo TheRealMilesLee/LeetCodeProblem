@@ -59,5 +59,11 @@ Result2 = TestCase.isValidSudoku(board2)
 print(Result2)
 
 """
-没啥复杂的, 就是hashmap存了然后看在不在就完事了
+传进来一个board, 遍历这个board, 看三点：
+
+1. 当前的row有没有重复项 (可以用dict来检查, rows存当前的row)
+2. 当前的column有没有重复项目 (可以用dict来检查, cols存当前的column)
+3. 当前的小方块有没有重复项目 (可以用dict来检查, squares就是一个dict, key就是坐标, value就是存的数)
+
+走一遍这个board, 然后检查完以后发现没有就直接return true
 """
