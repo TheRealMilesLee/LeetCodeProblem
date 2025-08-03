@@ -17,7 +17,7 @@ class Solution:
       if heights[left] <= heights[right]:
         left += 1
       else:
-        right += 1
+        right -= 1
     return results
 
 if __name__ == "__main__":
@@ -27,4 +27,10 @@ if __name__ == "__main__":
   results1 = TestCase.maxArea(height)
   print(results1)
 
-  
+"""
+双指针, 一个在左边一个在右边, 然后左到右的长度作为底, 左右最短的那个bar的高度为高,然后算面积
+
+如果左边矮了就把左边指针往右边移, 如果右边矮了就把右边指针往左边移
+
+算面积完了以后就用max找出最大的并且返回
+"""
