@@ -6,22 +6,22 @@ A consecutive sequence is a sequence of elements in which each element is exactl
 You must write an algorithm that runs in O(n) time.
 """
 
-import collections
-
 
 class Solution:
 
   def longestConsecutive(self, nums: list[int]) -> int:
-    mp = collections.defaultdict(int)
-    res = 0
+    numSet = set(nums)
+    longest = 0
 
-    for num in nums:
-      if not mp[num]:
-        mp[num] = mp[num - 1] + mp[num + 1] + 1
-        mp[num - mp[num - 1]] = mp[num]
-        mp[num + mp[num + 1]] = mp[num]
-        res = max(res, mp[num])
-    return res
+    for num in numSet:
+      # find the start of the sequence
+      if (num - 1) not in numSet:
+        length = 1
+        # Count the current lenghth of the sequence
+        while (num + length) in numSet:
+          length += 1
+        longest = max(length, longest)
+    return longest
 
 
 if __name__ == "__main__":
@@ -34,6 +34,7 @@ if __name__ == "__main__":
   nums2 = [1, 4, 5, 6, 7, 9, 100, 2, 3, 6, 8]
   Result2 = TestCase.longestConsecutive(nums2)
   print(Result2)
+
 """
-排序, 然后数
+这个题Tricky的地方在于如何去判断sequence. 总结下来其实就是先找到sequence的起点, 然后看当前数字的下一个数在不在nums里, 如果在就直接往下加
 """
