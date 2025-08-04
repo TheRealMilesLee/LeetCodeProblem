@@ -14,6 +14,8 @@ Return true if s is a valid string, and false otherwise.
 class Solution:
 
   def isValid(self, s: str) -> bool:
+    if len(s) < 2:
+      return False
     stack = []
 
     openParent = ["{", "[", "("]
@@ -52,3 +54,8 @@ if __name__ == "__main__":
   TestCase = Solution()
   Result4 = TestCase.isValid("(])")
   print(Result4)
+"""
+经典题型,用栈来找括号的对应. 在python中可以用数组来模拟一个倒过来的栈, append塞在最后面, pop把最后一个弹出来
+
+开括号是都可以默认进去的, 然后就看stack顶上和关括号是否对应, 如果不是对应的则return false
+"""
