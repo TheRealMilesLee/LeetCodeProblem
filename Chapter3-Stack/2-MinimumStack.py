@@ -14,23 +14,25 @@ Each function should run in O(1)O(1) time.
 class MinStack:
 
   def __init__(self):
-    self.newStack = []
+    self.stack = []
 
   def push(self, val: int) -> None:
-    self.newStack.append(val)
+    self.stack.append(val)
 
   def pop(self) -> None:
-    self.newStack.pop()
+    self.stack.pop()
 
   def top(self) -> int:
-    return self.newStack[-1]
+    return self.stack[len(self.stack) - 1]
 
   def getMin(self) -> int:
-    minValue = float('inf')
-    for index in self.newStack:
-      if index < minValue:
-        minValue = index
-    return minValue
+    minVal = float("inf")
+
+    for index in self.stack:
+      if index < minVal:
+        minVal = index
+
+    return minVal
 
 
 if __name__ == "__main__":
@@ -46,3 +48,6 @@ if __name__ == "__main__":
   print(checkpoint)
   print(checkpoint2)
   print(checkpoint3)
+"""
+简单题简单做, 用list来模拟一个倒过来的stack就好, 主要就是记住语法, append是往后面加入, pop是把最后一位弹出来
+"""
