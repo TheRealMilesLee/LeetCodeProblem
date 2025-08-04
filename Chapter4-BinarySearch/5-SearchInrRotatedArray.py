@@ -42,3 +42,8 @@ if __name__ == '__main__':
   nums = [3, 4, 5, 6, 1, 2]
   Result1 = TestCase.search(nums)
   print(Result1)
+
+
+"""
+和之前那个题有点像，
+"""
