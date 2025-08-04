@@ -5,26 +5,17 @@ Given an integer n. Return all well-formed parentheses strings that you can gene
 
 class Solution:
 
-  def generateParenthesis(self, n: int) -> list[str]:
-    stack = []
-    res = []
+  def generateParenthesis(self, n):
+    res = [[] for _ in range(n + 1)]
+    res[0] = [""]
 
-    def backtrack(openN, closedN):
-      if openN == closedN == n:
-        res.append("".join(stack))
-        return
+    for k in range(n + 1):
+      for i in range(k):
+        for left in res[i]:
+          for right in res[k - i - 1]:
+            res[k].append("(" + left + ")" + right)
 
-      if openN < n:
-        stack.append("(")
-        backtrack(openN + 1, closedN)
-        stack.pop()
-      if closedN < openN:
-        stack.append(")")
-        backtrack(openN, closedN + 1)
-        stack.pop()
-
-    backtrack(0, 0)
-    return res
+    return res[-1]
 
 
 if __name__ == "__main__":
@@ -35,3 +26,7 @@ if __name__ == "__main__":
 
   result2 = TestCase.generateParenthesis(3)
   print(result2)
+
+"""
+用dp来做, 初始化为空, 然后构造括号里可能出现的组合, 考虑洋葱一样抱进去的还有左右排列的
+"""
