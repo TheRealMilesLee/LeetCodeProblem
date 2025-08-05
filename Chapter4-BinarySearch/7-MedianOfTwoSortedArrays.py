@@ -35,7 +35,11 @@ class Solution:
         Bleft = B[j]
       else:
         Bleft = float("-infinity")
-      Bright = B[j + 1] if (j + 1) < len(B) else float("infinity")
+
+      if (j + 1) < len(B):
+        Bright = B[j + 1]
+      else:
+        Bright = float("infinity")
 
       if Aleft <= Bright and Bleft <= Aright:
         if total % 2:
