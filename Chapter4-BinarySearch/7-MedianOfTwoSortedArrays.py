@@ -24,7 +24,7 @@ class Solution:
       if i >= 0:
         Aleft = A[i]
       else:
-        Aleft = float("infinity")
+        Aleft = float("-infinity")
 
       if (i + 1) < len(A):
         Aright = A[i + 1]
