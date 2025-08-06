@@ -45,7 +45,10 @@ This repository contains solutions to various LeetCode problems implemented in P
 ├── Chapter5-SlidingWindow/
 │   ├── 1-BestTimeToBuyAndSellStock.py
 │   ├── 2-LongestSubstringWithoutRepeating.py
-│   └── 3-LongestRepeatingCharacterReplacement.py
+│   ├── 3-LongestRepeatingCharacterReplacement.py
+│   ├── 4-PermutationInString.py
+│   ├── 5-MinimumWindowSubstring.py
+│   └── 6-SlidingWindowMaximum.py
 ├── DynamicProgramming/
 │   ├── DP-CoinChange.py
 │   └── DP-RodCutting.py
@@ -93,6 +96,9 @@ This repository contains solutions to various LeetCode problems implemented in P
 - `1-BestTimeToBuyAndSellStock.py`: Find best time to buy and sell stock
 - `2-LongestSubstringWithoutRepeating.py`: Find longest substring without repeating characters
 - `3-LongestRepeatingCharacterReplacement.py`: Longest repeating character replacement
+- `4-PermutationInString.py`: Check if one string contains permutation of another
+- `5-MinimumWindowSubstring.py`: Find minimum window substring containing all characters
+- `6-SlidingWindowMaximum.py`: Find maximum in all sliding windows of size k
 
 ## Dynamic Programming
 - `DP-CoinChange.py`: Coin change problem solution
@@ -150,7 +156,10 @@ Python
 ├── Chapter5-SlidingWindow/
 │   ├── 1-BestTimeToBuyAndSellStock.py  # 买卖股票的最佳时机
 │   ├── 2-LongestSubstringWithoutRepeating.py  # 无重复字符的最长子串
-│   └── 3-LongestRepeatingCharacterReplacement.py  # 替换后的最长重复字符
+│   ├── 3-LongestRepeatingCharacterReplacement.py  # 替换后的最长重复字符
+│   ├── 4-PermutationInString.py        # 字符串的排列
+│   ├── 5-MinimumWindowSubstring.py     # 最小覆盖子串
+│   └── 6-SlidingWindowMaximum.py       # 滑动窗口最大值
 ├── DynamicProgramming/
 │   ├── DP-CoinChange.py              # 硬币找零问题
 │   └── DP-RodCutting.py              # 钢条切割问题
@@ -203,11 +212,14 @@ Python
 7. **寻找两个正序数组的中位数** - 使用二分查找找到两个排序数组的中位数
 
 ## 第五章：滑动窗口专题
-本章包含3个滑动窗口的经典问题：
+本章包含6个滑动窗口的经典问题：
 
 1. **买卖股票的最佳时机** - 使用滑动窗口找到最佳买卖时机
 2. **无重复字符的最长子串** - 滑动窗口找最长无重复字符子串
 3. **替换后的最长重复字符** - 滑动窗口结合字符替换找最长重复字符
+4. **字符串的排列** - 检查一个字符串是否包含另一个字符串的排列
+5. **最小覆盖子串** - 找到包含所有字符的最小窗口子串
+6. **滑动窗口最大值** - 找到所有大小为k的滑动窗口中的最大值
 
 ## 动态规划专题
 - **硬币找零问题** - 经典的动态规划入门问题
