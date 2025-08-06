@@ -1,6 +1,6 @@
 # LeetCodeProblem
 ## Project Overview
-This repository contains solutions to various LeetCode problems implemented in Python. The project is organized by topics with Chapter1 focusing on Array and Hashing problems, Chapter2 covering Two Pointer techniques, Chapter3 covering Stack algorithms, along with Dynamic Programming solutions.
+This repository contains solutions to various LeetCode problems implemented in Python. The project is organized by topics with Chapter1 focusing on Array and Hashing problems, Chapter2 covering Two Pointer techniques, Chapter3 covering Stack algorithms, Chapter4 covering Binary Search algorithms, Chapter5 covering Sliding Window techniques, along with Dynamic Programming solutions.
 
 ## Directory Structure
 ```
@@ -27,12 +27,25 @@ This repository contains solutions to various LeetCode problems implemented in P
 │   ├── 4-ContainerWithMostWater.py
 │   └── 5-TrappingRainWatere.py
 ├── Chapter3-Stack/
-│   ├── 1-MinimumStack.py
-│   ├── 2-EvaluateReversePolishNotation.py
-│   ├── 3-GenerateParentheses.py
-│   ├── 4-DailyTemperatures.py
-│   ├── 5-CarFleet.py
-│   └── 6-LargestRectangleInHistogram.py
+│   ├── 1-ValidParentensis.py
+│   ├── 2-MinimumStack.py
+│   ├── 3-EvaluateReversePolishNotation.py
+│   ├── 4-GenerateParentheses.py
+│   ├── 5-DailyTemperatures.py
+│   ├── 6-CarFleet.py
+│   └── 7-LargestRectangleInHistogram.py
+├── Chapter4-BinarySearch/
+│   ├── 1-BinarySearch.py
+│   ├── 2-Search2DMatrix.py
+│   ├── 3-KokoEatingBanana.py
+│   ├── 4-FindMinimumInRotatedSortedArray.py
+│   ├── 5-SearchInrRotatedArray.py
+│   ├── 6-TimeBasedKeyValueStore.py
+│   └── 7-MedianOfTwoSortedArrays.py
+├── Chapter5-SlidingWindow/
+│   ├── 1-BestTimeToBuyAndSellStock.py
+│   ├── 2-LongestSubstringWithoutRepeating.py
+│   └── 3-LongestRepeatingCharacterReplacement.py
 ├── DynamicProgramming/
 │   ├── DP-CoinChange.py
 │   └── DP-RodCutting.py
@@ -59,12 +72,27 @@ This repository contains solutions to various LeetCode problems implemented in P
 - `5-TrappingRainWatere.py`: Calculate trapped rainwater between bars
 
 ## Chapter 3: Stack Problems
-- `1-MinimumStack.py`: Design a stack with O(1) push, pop, top and getMin operations
-- `2-EvaluateReversePolishNotation.py`: Evaluate arithmetic expression in reverse polish notation
-- `3-GenerateParentheses.py`: Generate all well-formed parentheses combinations
-- `4-DailyTemperatures.py`: Find next warmer temperature for each day
-- `5-CarFleet.py`: Calculate number of car fleets reaching destination
-- `6-LargestRectangleInHistogram.py`: Find largest rectangle area in histogram
+- `1-ValidParentensis.py`: Check if string has valid parentheses
+- `2-MinimumStack.py`: Design a stack with O(1) push, pop, top and getMin operations
+- `3-EvaluateReversePolishNotation.py`: Evaluate arithmetic expression in reverse polish notation
+- `4-GenerateParentheses.py`: Generate all well-formed parentheses combinations
+- `5-DailyTemperatures.py`: Find next warmer temperature for each day
+- `6-CarFleet.py`: Calculate number of car fleets reaching destination
+- `7-LargestRectangleInHistogram.py`: Find largest rectangle area in histogram
+
+## Chapter 4: Binary Search Problems
+- `1-BinarySearch.py`: Classic binary search implementation
+- `2-Search2DMatrix.py`: Search in a 2D matrix with sorted properties
+- `3-KokoEatingBanana.py`: Find minimum eating speed to finish bananas in time
+- `4-FindMinimumInRotatedSortedArray.py`: Find minimum in rotated sorted array
+- `5-SearchInrRotatedArray.py`: Search target in rotated sorted array
+- `6-TimeBasedKeyValueStore.py`: Design time-based key-value store
+- `7-MedianOfTwoSortedArrays.py`: Find median of two sorted arrays
+
+## Chapter 5: Sliding Window Problems
+- `1-BestTimeToBuyAndSellStock.py`: Find best time to buy and sell stock
+- `2-LongestSubstringWithoutRepeating.py`: Find longest substring without repeating characters
+- `3-LongestRepeatingCharacterReplacement.py`: Longest repeating character replacement
 
 ## Dynamic Programming
 - `DP-CoinChange.py`: Coin change problem solution
@@ -77,7 +105,7 @@ Python
 
 # LeetCodeProblem
 ## 项目简介
-本项目包含多个LeetCode算法题解，采用Python实现。项目按主题分类，第一章专注于数组和哈希表问题，第二章涵盖双指针技巧，第三章包含栈相关算法，另外包含动态规划相关解题方案。
+本项目包含多个LeetCode算法题解，采用Python实现。项目按主题分类，第一章专注于数组和哈希表问题，第二章涵盖双指针技巧，第三章包含栈相关算法，第四章涵盖二分查找算法，第五章包含滑动窗口技巧，另外包含动态规划相关解题方案。
 
 ## 目录结构
 ```
@@ -104,12 +132,25 @@ Python
 │   ├── 4-ContainerWithMostWater.py   # 盛最多水的容器
 │   └── 5-TrappingRainWatere.py       # 接雨水
 ├── Chapter3-Stack/
-│   ├── 1-MinimumStack.py             # 最小栈设计
-│   ├── 2-EvaluateReversePolishNotation.py  # 逆波兰表达式求值
-│   ├── 3-GenerateParentheses.py      # 生成括号
-│   ├── 4-DailyTemperatures.py        # 每日温度
-│   ├── 5-CarFleet.py                 # 车队
-│   └── 6-LargestRectangleInHistogram.py  # 柱状图中最大的矩形
+│   ├── 1-ValidParentensis.py         # 有效的括号
+│   ├── 2-MinimumStack.py             # 最小栈设计
+│   ├── 3-EvaluateReversePolishNotation.py  # 逆波兰表达式求值
+│   ├── 4-GenerateParentheses.py      # 生成括号
+│   ├── 5-DailyTemperatures.py        # 每日温度
+│   ├── 6-CarFleet.py                 # 车队
+│   └── 7-LargestRectangleInHistogram.py  # 柱状图中最大的矩形
+├── Chapter4-BinarySearch/
+│   ├── 1-BinarySearch.py             # 二分查找
+│   ├── 2-Search2DMatrix.py           # 搜索二维矩阵
+│   ├── 3-KokoEatingBanana.py         # 爱吃香蕉的珂珂
+│   ├── 4-FindMinimumInRotatedSortedArray.py  # 寻找旋转排序数组中的最小值
+│   ├── 5-SearchInrRotatedArray.py    # 搜索旋转排序数组
+│   ├── 6-TimeBasedKeyValueStore.py   # 基于时间的键值存储
+│   └── 7-MedianOfTwoSortedArrays.py  # 寻找两个正序数组的中位数
+├── Chapter5-SlidingWindow/
+│   ├── 1-BestTimeToBuyAndSellStock.py  # 买卖股票的最佳时机
+│   ├── 2-LongestSubstringWithoutRepeating.py  # 无重复字符的最长子串
+│   └── 3-LongestRepeatingCharacterReplacement.py  # 替换后的最长重复字符
 ├── DynamicProgramming/
 │   ├── DP-CoinChange.py              # 硬币找零问题
 │   └── DP-RodCutting.py              # 钢条切割问题
@@ -140,14 +181,33 @@ Python
 5. **接雨水** - 双指针计算能接到的雨水总量
 
 ## 第三章：栈算法专题
-本章包含6个栈相关的经典问题：
+本章包含7个栈相关的经典问题：
 
-1. **最小栈** - 设计支持O(1)时间复杂度的push、pop、top和getMin操作的栈
-2. **逆波兰表达式求值** - 使用栈计算后缀表达式的值
-3. **生成括号** - 递归生成所有有效的括号组合
-4. **每日温度** - 单调栈找到每天之后更暖和的天数
-5. **车队** - 计算到达目的地的车队数量
-6. **柱状图中最大的矩形** - 使用栈找到直方图中最大矩形面积
+1. **有效的括号** - 使用栈验证括号的有效性
+2. **最小栈** - 设计支持O(1)时间复杂度的push、pop、top和getMin操作的栈
+3. **逆波兰表达式求值** - 使用栈计算后缀表达式的值
+4. **生成括号** - 递归生成所有有效的括号组合
+5. **每日温度** - 单调栈找到每天之后更暖和的天数
+6. **车队** - 计算到达目的地的车队数量
+7. **柱状图中最大的矩形** - 使用栈找到直方图中最大矩形面积
+
+## 第四章：二分查找专题
+本章包含7个二分查找的经典问题：
+
+1. **二分查找** - 经典的二分查找算法实现
+2. **搜索二维矩阵** - 在行列有序的二维矩阵中查找目标值
+3. **爱吃香蕉的珂珂** - 使用二分查找找到最小的吃香蕉速度
+4. **寻找旋转排序数组中的最小值** - 在旋转排序数组中找最小值
+5. **搜索旋转排序数组** - 在旋转排序数组中查找目标值
+6. **基于时间的键值存储** - 设计支持时间戳的键值存储系统
+7. **寻找两个正序数组的中位数** - 使用二分查找找到两个排序数组的中位数
+
+## 第五章：滑动窗口专题
+本章包含3个滑动窗口的经典问题：
+
+1. **买卖股票的最佳时机** - 使用滑动窗口找到最佳买卖时机
+2. **无重复字符的最长子串** - 滑动窗口找最长无重复字符子串
+3. **替换后的最长重复字符** - 滑动窗口结合字符替换找最长重复字符
 
 ## 动态规划专题
 - **硬币找零问题** - 经典的动态规划入门问题
@@ -165,7 +225,9 @@ Python
 1. **第一章 - 数组与哈希表**: 掌握基础数据结构的应用
 2. **第二章 - 双指针技巧**: 学习空间优化的算法思想
 3. **第三章 - 栈算法专题**: 理解栈数据结构的经典应用场景
-4. **动态规划专题**: 理解最优子结构和状态转移
+4. **第四章 - 二分查找专题**: 掌握分治思想和对数时间复杂度算法
+5. **第五章 - 滑动窗口专题**: 学习动态窗口的优化技巧
+6. **动态规划专题**: 理解最优子结构和状态转移
 
 ## 使用说明
 1. 克隆项目仓库
