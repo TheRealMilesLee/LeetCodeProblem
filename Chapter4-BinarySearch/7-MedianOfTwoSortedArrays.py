@@ -58,3 +58,10 @@ if __name__ == '__main__':
   nums2 = [3]
   Result1 = TestCase.findMedianSortedArrays(nums1, nums2)
   print(Result1)
+
+
+"""
+Brute Force的方法就是把这两个array并在一起, 然后sort然后找到中间数, 但是这个方法的复杂度是O(nlogn)
+
+O(log(m+n))的办法是不合并, 在这两个数组之间找到一个分界线, 这样左边一半能 <= 右边一半来模拟出这个中位数
+"""
