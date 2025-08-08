@@ -29,3 +29,8 @@ if __name__ == "__main__":
   temperatures = [30, 38, 30, 36, 35, 40, 28]
   results = TestCase.dailyTemperatures(temperatures)
   print(results)
+"""
+stack存的是还没有等到更高温度的日子, 是一个tuple, 左边是当前温度, 右边是当前温度所在的index
+
+指针向前走,如果看到了比当前温度更高的, 就弹出当前的温度, 并且把计数写入array, 然后将新的最高压入stack
+"""
