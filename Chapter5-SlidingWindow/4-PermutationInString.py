@@ -50,3 +50,9 @@ if __name__ == '__main__':
   string2 = "lecabee"
   Result1 = TestCase.checkInclusion(string1, string2)
   print(Result1)
+
+"""
+在s2上滑动一个大小为len(s1)的窗口, 然后看窗口内的字符串是否和s1匹配
+
+因为要考虑到可能排列顺序不一样, 所以需要像之前一样维护一个array, 如果这俩一样的话array的每一个元素都应该是0, 否则就是不一样(长度为26, s1是加s2是减)
+"""
