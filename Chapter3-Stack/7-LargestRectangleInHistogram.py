@@ -44,3 +44,11 @@ if __name__ == "__main__":
   heights = [7, 1, 7, 2, 2, 4]
   result1 = TestCase.largestRectangleArea(heights)
   print(result1)
+
+"""
+stack代表的是当前我们正在考虑的高度, 如果当前高度不能再向右延展了, 那么就从stack中pop出来
+
+返回的maxArea就是计算的length x height的最大值
+
+对于stack来说, 存的是当前bar的index和height, 如果当前的height比上一个height小, 那么先计算面积以后再pop掉上一个然后放入新的. 面积的计算方法就是上一个的height x 上一个index到当前index的距离, 然后更新到max area里. 如果当前的height比上一个height大, 则只是把当前的height和当前的index继续推入栈里面
+"""
