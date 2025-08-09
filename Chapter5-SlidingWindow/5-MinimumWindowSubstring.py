@@ -44,3 +44,8 @@ if __name__ == '__main__':
   string2 = "ABC"
   Result1 = TestCase.minWindow(string1, string2)
   print(Result1)
+"""
+这次用dict来记录t的字符和对应出现次数, 然后s放两个指针, 右边的向右加入新的字符直到和t的字典中出现字符数量一样, 然后左指针向左来删除不必要的字符, 同时要保证当前窗口内的与t相同的字符出现频率一样
+
+当左右都不能动了, 这就是最短substring
+"""
