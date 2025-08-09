@@ -32,3 +32,9 @@ if __name__ == '__main__':
   string1 = "XYYX"
   Result1 = TestCase.characterReplacement(string1, 2)
   print(Result1)
+
+"""
+右边指针不断向右扩张窗口, 累加统计
+如果超过替换次数限制, 左边指针逐步向右缩小窗口直到合法
+每一步都保证窗口最大而且合法, 记录最大长度
+"""
