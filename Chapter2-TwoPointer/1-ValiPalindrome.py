@@ -11,7 +11,7 @@ class Solution:
     toloweredString = s.lower()
     filteredString = ""
     for index in toloweredString:
-      if index.isalnum():
+      if index.isalpha() or index.isnumeric():
         filteredString += index
 
     ptrStart = 0
@@ -34,7 +34,6 @@ if __name__ == "__main__":
   string2 = "tab a cat"
   Result2 = TestCase.isPalindrome(string2)
   print(Result2)
-
 """
 经典双指针, 需要注意的点就是要统一大小写, 并且要筛掉非数字和字母的字符. 然后剩下的就是简单的一头一尾两个指针向中间走就好了
 """
