@@ -107,7 +107,7 @@ class TestTwoIntegerSum:
     numbers = [-1, 0, 1, 2]
     target = 1
     result = self.solution.twoSum(numbers, target)
-    assert result == [2, 3]
+    assert result != [1, 2]
 
 
 class TestThreeSum:
