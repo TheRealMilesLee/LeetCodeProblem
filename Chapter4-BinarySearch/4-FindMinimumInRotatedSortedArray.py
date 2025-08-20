@@ -14,7 +14,7 @@ A solution that runs in O(n) time is trivial, can you write an algorithm that ru
 
 class Solution:
 
-  def finMin(self, nums: list[int]) -> int:
+  def findMin(self, nums: list[int]) -> int:
     results = nums[0]
 
     left = 0
@@ -39,11 +39,11 @@ if __name__ == '__main__':
   TestCase = Solution()
 
   nums = [3, 4, 5, 6, 1, 2]
-  Result1 = TestCase.finMin(nums)
+  Result1 = TestCase.findMin(nums)
   print(Result1)
 
   nums2 = [4, 5, 0, 1, 2, 3]
-  Result2 = TestCase.finMin(nums2)
+  Result2 = TestCase.findMin(nums2)
   print(Result2)
 """
 如果是已经排序的Array, 那么直接return第一个数就好. 但是这里是旋转以后的, 所以我们这还是可以从中间开始, 如果中间的数大于最左边的, 那么左半边的就可以不管了只看右边, 如果中间的数小于左边的, 那么右半边的就可以不管了只看左半边, 而因为原来的array是排序过的, 所以左半边和右半边也一定是有序的
