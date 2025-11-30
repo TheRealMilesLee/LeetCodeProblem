@@ -1,6 +1,7 @@
 # LeetCodeProblem
-## Project Overview
-This repository contains solutions to various LeetCode problems implemented in Python. The project is organized by topics with Chapter1 focusing on Array and Hashing problems, Chapter2 covering Two Pointer techniques, Chapter3 covering Stack algorithms, Chapter4 covering Binary Search algorithms, Chapter5 covering Sliding Window techniques, along with Dynamic Programming solutions.
+## Project Overview / 项目概览
+This repository contains Python implementations of categorized LeetCode problems. Each chapter groups a core technique (Array & Hashing, Two Pointers, Stack, Binary Search, Sliding Window, Dynamic Programming) for structured learning and interview preparation.
+本仓库按主题分类整理 LeetCode 题解，覆盖数组与哈希、双指针、栈、二分查找、滑动窗口与动态规划等核心技巧，适合作为系统复习与面试准备材料。
 
 ## Directory Structure
 ```
@@ -104,8 +105,19 @@ This repository contains solutions to various LeetCode problems implemented in P
 - `DP-CoinChange.py`: Coin change problem solution
 - `DP-RodCutting.py`: Rod cutting optimization problem
 
-## Language
-Python
+## Environment / 运行环境
+| Item | Version (Recommended) |
+|------|-----------------------|
+| Python | 3.10+ |
+| Formatter | `black` / `ruff` |
+| Test | `pytest` (optional) |
+
+Setup virtual environment:
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt  # (if provided / 自行添加)
+```
 
 ---
 
@@ -225,13 +237,12 @@ Python
 - **硬币找零问题** - 经典的动态规划入门问题
 - **钢条切割问题** - 最优子结构的动态规划应用
 
-## 技术说明
-- 主要开发语言: Python
-- 代码规范: PEP8格式标准
-- 算法复杂度: 每个解法都注重时间和空间复杂度优化
-- 数据结构: 重点使用数组、哈希表、集合、栈等基础数据结构
-- 算法技巧: 涵盖哈希表、双指针、栈、动态规划等经典算法思想
-- 开发环境: 配置了VS Code开发环境，包含调试和任务配置
+## 技术说明 / Technical Notes
+- 语言: Python (优先使用内置数据结构以提升简洁性)
+- 规范: PEP8 + 类型注解（推荐后续补充）
+- 复杂度: 均标注典型时间/空间复杂度（可在代码顶部注释添加）
+- 结构: 每题一个文件，文件命名包含序号 + 问题关键名（便于排序与索引）
+- 扩展: 可新增 `tests/` 目录做自动化验证
 
 ## 学习路径
 1. **第一章 - 数组与哈希表**: 掌握基础数据结构的应用
@@ -241,21 +252,77 @@ Python
 5. **第五章 - 滑动窗口专题**: 学习动态窗口的优化技巧
 6. **动态规划专题**: 理解最优子结构和状态转移
 
-## 使用说明
-1. 克隆项目仓库
-2. 安装Python环境
-3. 直接运行`.py`文件或通过IDE打开`.vscode`配置文件
-4. 通过单元测试验证算法正确性
-## 贡献指南
-欢迎提交以下类型的贡献：
-- 新增LeetCode题解
-- 优化现有算法实现
-- 修复代码错误
-- 完善文档说明
-## 许可证
-项目采用MIT许可证，详见LICENSE文件
-## 注意事项
-1. 项目包含Git版本控制相关文件
-2. 示例代码已通过基础测试
-3. 请确保使用Python 3.x环境
-4. 避免直接提交编译生成文件到主分支
+## 使用说明 / How to Run
+```bash
+git clone <repo-url>
+cd LeetCodeProblem
+
+# 运行单题
+python Chapter1-ArrayHashing/3-TwoSum.py
+
+# （建议）为多题添加统一入口
+python run.py --chapter 2 --problem ThreeSum
+```
+可自建 `run.py` 示例：
+```python
+#!/usr/bin/env python3
+import importlib, argparse
+
+CHAPTER_MAP = {
+  "1": "Chapter1-ArrayHashing",
+  "2": "Chapter2-TwoPointer",
+  "3": "Chapter3-Stack",
+  "4": "Chapter4-BinarySearch",
+  "5": "Chapter5-SlidingWindow",
+  "dp": "DynamicProgramming"
+}
+
+def main():
+	ap = argparse.ArgumentParser()
+	ap.add_argument("--chapter", required=True)
+	ap.add_argument("--module", required=True, help="File stem without prefix number")
+	args = ap.parse_args()
+	folder = CHAPTER_MAP[args.chapter]
+	# 简单匹配：遍历该目录找到包含 module 关键字的文件再导入运行
+	import os, glob
+	for path in glob.glob(f"{folder}/*.py"):
+		if args.module.lower() in os.path.basename(path).lower():
+			mod = os.path.splitext(path.replace("/", "."))[0]
+			importlib.import_module(mod)
+			break
+	else:
+		print("Module not found")
+
+if __name__ == "__main__":
+	main()
+```
+## 贡献指南 / Contributing
+欢迎提交：
+- 新题目解法（含复杂度说明与必要注释）
+- 改进现有实现（更优时间/空间复杂度）
+- 增加测试用例（边界/极端场景）
+- 添加运行入口或学习路线文档
+
+提交建议：
+1. 新增文件命名保持现有风格 `序号-题名.py`
+2. 题解顶部统一添加：
+	```python
+	# Time: O(n log n) | Space: O(n)
+	# Approach: Sorting + Two Pointers
+	```
+3. 避免直接引入重量级第三方库（保持面试场景可复现性）
+4. 可附上 LeetCode 原题链接以便跳转
+## 许可证 / License
+MIT License (见 `LICENSE`)
+## 注意事项 / Notes
+1. 优先使用内置数据结构与标准库
+2. 若多解并存可在同文件内分多个函数（注明对比）
+3. 可以添加 `README` 子节：“常见错误模式” (例如 off-by-one, mutable default args 等)
+4. 不要提交个人测试输出或大量临时数据文件
+
+## Roadmap / 后续规划
+- [ ] 添加统一测试框架 (`pytest`)
+- [ ] 增加题目难度标签与进阶索引
+- [ ] 引入题目分类映射 JSON (`tags.json`)
+- [ ] 增加复杂度对比的 Benchmark 脚本
+
