@@ -1,6 +1,6 @@
 CXX := clang++
-TARGET := build/palindrome_benchmark
-SRC := src/PalindromeHighPerformance.cpp
+TARGET := palindrome_benchmark
+SRC := PalindromeHighPerformance.cpp
 
 CXXFLAGS := -std=c++20 -O3 -DNDEBUG -Wall -Wextra -Wpedantic -pthread
 LDFLAGS := -pthread
